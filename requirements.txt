@@ -1,0 +1,5 @@
+pandas
+numpy
+sklearn
+scipy
+tensorflow==1.13.1
