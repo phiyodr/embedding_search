@@ -61,11 +61,12 @@ Embed sentences or a list of words.
 
 ```python
 e = es.TfHubEmbedder()
-data = ["Auto", "Bus", "Cäsar"]
+data = ["Auto", "Bus", "Caesar"]
 e.embed(data)
 print("Embeddings' shape: {}".format(e.embeddings.shape))
 e.save("data/demo_emb.npy", "data/demo_titles.npy")
 e.load("data/demo_emb.npy", "data/demo_titles.npy")
+> Embeddings' shape: (3, 128)
 ```
 
 ### 3. Find ClosestEmbedding
@@ -77,4 +78,9 @@ ce = es.ClosestEmbedding(e.embeddings, e.titles)
 sim_df = ce.find_closest(search_string="VW")
 ce.plot_result()
 print(sim_df)
+>               VW
+> Auto    0.720517
+> Bus     0.602985
+> Caesar  0.468566
+
 ```
